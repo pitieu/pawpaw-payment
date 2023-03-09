@@ -1,0 +1,1 @@
+export const DEFAULT_QUOTA_LIMIT = 100
