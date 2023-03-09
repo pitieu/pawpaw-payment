@@ -11,6 +11,7 @@ export const accountSchema = new mongoose.Schema(
     },
     address: { type: String, required: true },
     privateKey: { type: String, required: true },
+    network: { type: String, required: true },
     deleted: { type: Boolean, default: false },
     deleted_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     deleted_at: { type: Date },
@@ -20,6 +21,6 @@ export const accountSchema = new mongoose.Schema(
 )
 accountSchema.plugin(uniqueValidator)
 
-const Account = mongoose.model('Account', accountSchema)
+export const Account = mongoose.model('Account', accountSchema)
 
 export default Account

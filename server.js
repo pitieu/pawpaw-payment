@@ -1,9 +1,10 @@
 import dotenv from 'dotenv'
 
-import {
-  populatePostalCode,
-  populateProvinces,
-} from './initialization/address.js'
+// import {
+//   populatePostalCode,
+//   populateProvinces,
+// } from './initialization/address.js'
+import { addSubscriptions } from './initialization/subscription.js'
 import debug from './utils/logger.js'
 import { httpServer, httpsServer } from './app.js'
 import { initMongoose } from './mongodb/mongo.js'
@@ -15,7 +16,8 @@ const portHttps = process.env.APP_HTTPS_PORT || 8082
 
 initMongoose().then(() => {
   const initializeMissingData = async () => {
-    await populateProvinces()
+    // await populateProvinces()
+    await addSubscriptions()
   }
   try {
     initializeMissingData()

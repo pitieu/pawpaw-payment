@@ -4,3 +4,6 @@ uploads
 ngrok
 
 db/
+
+yarn.lock
+package-lock.json

@@ -39,8 +39,13 @@ export class cryptoManager {
     return await this.network.balance(address)
   }
 
-  async transfer(sender, recipient, transferAmount) {
-    return await this.network.transfer(sender, recipient, transferAmount)
+  async transfer(sender, recipient, transferAmount, privateKey) {
+    return await this.network.transfer(
+      sender,
+      recipient,
+      transferAmount,
+      privateKey,
+    )
   }
 
   async createAccount() {

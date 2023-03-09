@@ -44,8 +44,32 @@ router.post('/transfer', authArea, async (req, res, next) => {
     const recipient = req.body.recipient
     const transferAmount = req.body.transferAmount
 
+    // check that recipient is part of the system
+    const recipientAccount = await Account.findOne({
+      user: req.user._id,
+      address: recipient,
+      network: network,
+    })
+
+    if (!recipientAccount || !recipientAccount.privateKey)
+      throw new Error('Recipient Account not found')
+
+    const account = await Account.findOne({
+      user: req.user._id,
+      address: sender,
+      network: network,
+    })
+
+    if (!account || !account.privateKey)
+      throw new Error('Sender Account not found')
+
     const crypto = new cryptoManager({ name: network })
-    const transaction = await crypto.transfer(sender, recipient, transferAmount)
+    const transaction = await crypto.transfer(
+      sender,
+      recipient,
+      transferAmount,
+      account.privateKey,
+    )
     res.status(200).json(transaction)
   } catch (err) {
     next(err)
@@ -60,10 +84,10 @@ router.post('/account', authArea, async (req, res, next) => {
     const account = await crypto.createAccount()
 
     const newAccount = new Account({
+      user: req.user._id,
       address: account.address,
       privateKey: account.privateKey,
       network: network,
-      user: req.user._id,
     })
     await newAccount.save()
 

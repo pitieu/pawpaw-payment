@@ -23,6 +23,7 @@ export class EthNetwork {
   async getBlockNumber() {
     return this.web3.eth.getBlockNumber()
   }
+
   // sign transaction
   async signTransaction(tx, privateKey) {
     return this.web3.eth.accounts.signTransaction(tx, privateKey)
@@ -33,8 +34,9 @@ export class EthNetwork {
     return this.web3.eth.sendSignedTransaction(signedTx)
   }
 
+  // TODO: move transfer function to other server including privateKey?
   // transfer eth from sender to recipient
-  async transfer(sender, recipient, transferAmount) {
+  async transfer(sender, recipient, transferAmount, privateKey) {
     // Set the amount to transfer in wei (1 ETH = 1e18 wei)
     const amount = this.web3.utils.toWei(transferAmount, 'wei')
 
@@ -48,9 +50,7 @@ export class EthNetwork {
       gas: 21000,
     }
 
-    // Sign and send the transaction
-    this.web3.eth
-      .sendTransaction(transactionObject)
+    await signTransaction(transactionObject, privateKey)
       .on('transactionHash', function (hash) {
         console.log('Transaction Hash:', hash)
       })
