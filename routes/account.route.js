@@ -5,13 +5,7 @@ import path from 'path'
 
 import debug from '../utils/logger.js'
 import { authArea } from '../middleware/auth.middleware.js'
-import {
-  fetchUser,
-  fetchAccounts,
-  selectAccount,
-  searchAddress,
-  createAccount,
-} from '../controller/account.ctrl.js'
+import { fetchUser, searchAddress } from '../controller/account.ctrl.js'
 import User from '../model/User.model.js'
 import {
   filterUserPublicFields,
@@ -121,33 +115,10 @@ const _fetchAddress = async (req, res, next) => {
   }
 }
 
-const _createAccount = async (req, res, next) => {
-  try {
-    const accounts = await Account.find({ user_id: req.user._id })
-    if (accounts.length >= 5) {
-      throw new Error('You have reached the maximum number of accounts')
-    }
-
-    const account = await createAccount({
-      user_id: req.user._id,
-      ...req.body,
-    })
-
-    res.status(200).send({
-      message: 'successfully created account',
-      status: 200,
-      user: filterUserPublicFields(account),
-    })
-  } catch (err) {
-    next(err)
-  }
-}
-
 // ----------------------------------------------------------------------
 // ROUTES
 // ----------------------------------------------------------------------
 
-router.post('/', authArea, _createAccount)
 router.get('/fetch', authArea, _fetchUser)
 router.get('/address', _fetchAddress)
 router.put('/:account_id/select', authArea, _selectAccount)

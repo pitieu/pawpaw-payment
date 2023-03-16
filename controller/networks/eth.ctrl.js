@@ -14,6 +14,10 @@ export class EthNetwork {
     this.GAS_PRICE = 0
   }
 
+  async generateSeed() {
+    return 'Not implemented yet'
+  }
+
   // generate a new account
   async createAccount() {
     return this.web3.eth.accounts.create()

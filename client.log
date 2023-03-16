@@ -1,0 +1,78 @@
+2023-03-16 08:28:01 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:28:01 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:28:01 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:28:20 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:28:20 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:28:20 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:28:47 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:28:47 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:28:47 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:32:39 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:32:39 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:32:39 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:33:39 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:33:39 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:33:39 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:34:00 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:34:00 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:34:00 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:34:00 (UTC) client::message_handler                    [94mDEBUG[0m Error("unknown variant `ABC`, expected one of `Mnemonic`, `HexSeed`, `Placeholder`", line: 1, column: 57)
+2023-03-16 08:34:45 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:34:45 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:34:45 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:34:45 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:34:45 (UTC) client::message_handler                    [94mDEBUG[0m Error("unknown variant `1922f6601db0dddc13d5e980f1b1837d28e41ee35bed4048e43275305b935f92`, expected one of `Mnemonic`, `HexSeed`, `Placeholder`", line: 1, column: 118)
+2023-03-16 08:34:45 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:34:45 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:35:11 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:35:11 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:35:11 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:35:11 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:35:11 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:35:11 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:35:11 (UTC) client::message_handler                    [94mDEBUG[0m Error("unknown variant `67514fa5de4b985cbca657c3470a139dce68871192b851cec92e3f107cb27924`, expected one of `Mnemonic`, `HexSeed`, `Placeholder`", line: 1, column: 118)
+2023-03-16 08:35:39 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:35:39 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:35:39 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:35:39 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:35:39 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:35:39 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:35:39 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GenerateAddresses{ secret_manager: <omitted>, options: GetAddressesBuilderOptions { coin_type: None, account_index: None, range: None, internal: None, bech32_hrp: None, options: None } }
+2023-03-16 08:35:39 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: Error(PlaceholderSecretManager)
+2023-03-16 08:36:43 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:36:43 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:36:43 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:36:43 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:36:43 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:36:43 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:36:43 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 63)
+2023-03-16 08:37:08 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:37:08 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:37:08 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:37:08 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:37:08 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:37:08 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:37:08 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 64)
+2023-03-16 08:37:27 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:37:27 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:37:27 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:37:27 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:37:27 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:37:27 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:37:27 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 64)
+2023-03-16 08:37:35 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:37:35 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:37:35 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:37:35 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:37:35 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 47)
+2023-03-16 08:37:35 (UTC) client::message_handler                    [94mDEBUG[0m Error("invalid type: map, expected a string", line: 1, column: 64)
+2023-03-16 08:37:35 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:37:59 (UTC) iota_client::node_manager::syncing         [94mDEBUG[0m sync_nodes
+2023-03-16 08:37:59 (UTC) reqwest::connect                           [94mDEBUG[0m starting new connection: https://nodes.devnet.iota.org/
+2023-03-16 08:37:59 (UTC) iota_client::node_manager::syncing         [91mERROR[0m Couldn't get the node info from https://nodes.devnet.iota.org/
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Message: GenerateMnemonic
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedMnemonic(<omitted>)
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: MnemonicToHexSeed{ <omitted> }
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: MnemonicHexSeed(<omitted>)
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GenerateAddresses{ secret_manager: <omitted>, options: GetAddressesBuilderOptions { coin_type: None, account_index: None, range: None, internal: None, bech32_hrp: None, options: None } }
+2023-03-16 08:37:59 (UTC) iota_client::message_interface::message_handler [94mDEBUG[0m Response: GeneratedAddresses(["smr1qq7ucrkmympx95hgjm9v9nxevjpr7348tk7sg3rjacnxn2vaajx9k94478n", "smr1qzvjvn3w2qkads7y290463s54p7385uf3sly8hxdylsja6rjtczss3j02ly", "smr1qzg4dy22sv0n0lhuskcglywnppggp3zxstjg382p3jrwsnzfve5hwke8h06", "smr1qzv4wq4p7c9l5algn2n0sam4j4vj9eyhk8q5qvgcx23ydacne42z29svc2p", "smr1qpvr3fsdgu3cjx32telvvkm9hs230y9xeuqxvpytttnt4na0kvd3z3k79ar", "smr1qr2zv5k3g7mchkujegpyuldynkk3ch7ggz9jsek8d0ufqz0suvql2fs4nh3", "smr1qr0hnl3q7fprevpj7vskw063yzvf2p4qmv6yxhvzycwyhp06cyw4c0pvjn9", "smr1qquqc08h2vgavxwdup67aan9gvem6wjxmkj9fkmr8mc2nh9cqanj22q9q9e", "smr1qqv6le70gyppy5386w8qlp5nans4surxktj0x8rs428c6tzfqcm564uyknq", "smr1qzu2w78zq9d59qw6ykqpygk6vxvujdcv6l7sa4r762ugk2pr3uxac8vz94e", "smr1qp9cqzhzl0l5n88dgm2rjkv7yrafkkd3vhwyzmamnr7cwt3gmvayy42cl3c", "smr1qzep524khapl9n7kqs0ph32xvh372ulxf9delpmqwhyl2wrfg37qzfs74nc", "smr1qpaffplup9m038uvmxk95vxndnexv4lpvangn367jjmmapuq430fcyu74zh", "smr1qqgjjz5nvwddtfsm3jw7sc8qnztztxnynjml452t42n8txshrj2pk6snenv", "smr1qpr93vhfj7sdr2emslzgksrrmg3sqsvt7wgtxz7punm3ryxvn0mg6h5qyl3", "smr1qzfzx2kmhzjh64utgegcr4kw6vl7f6rg3gyggn98xfvscu8x8d0evsw8se4", "smr1qpqdqs4sr36q8ar50np89kltayvnkhvr4hnjx9g5rg50e77gztkf2u5pdjk", "smr1qqf3v7ktcsa0wmkr76z4n7wdv0e03wxw00afgxjm7z4p0nw5gkesy3vstmy", "smr1qrxtvqdqhun52n7squ468djtdlwqzz7xuza85lh8fkgxznq5uspxs5z9uea", "smr1qrrys4nw0pmj0j7l43psmqenrxugfm87g84rj7nxyldt884yd78sc7wdeu2"])

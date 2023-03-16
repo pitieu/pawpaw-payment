@@ -9,7 +9,6 @@ export const userSchema = new mongoose.Schema(
     email: { type: String, lowercase: true, unique: true },
     phone_validated: { type: Boolean, default: false },
     email_validated: { type: Boolean, default: false },
-    selected_account: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' },
     status: { type: String, enum: ['active', 'inactive'], default: 'active' },
     deleted: { type: Boolean, default: false },
     deleted_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -18,7 +17,7 @@ export const userSchema = new mongoose.Schema(
     subscription: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Subscription',
-      required: true,
+      required: false,
     },
   },
   { timestamps: true },

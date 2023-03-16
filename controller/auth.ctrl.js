@@ -23,25 +23,19 @@ export const login = async (data) => {
 
   let user = await User.findOne(
     {
-      phone: data.phone,
-      phone_ext: data.phone_ext,
+      email: data.email,
       deleted: false,
     },
     {
       _id: 1,
-      phone: 1,
-      phone_ext: 1,
-      accounts: 1,
+      email: 1,
       password: 1,
-      selected_account: 1,
     },
-  )
-    .populate('selected_account', { _id: 1, username: 1 })
-    .lean()
+  ).lean()
 
   if (!user)
     throw {
-      error: 'phone number not found',
+      error: 'Account not found',
       status: 400,
       error_code: 101,
     }
@@ -55,8 +49,7 @@ export const login = async (data) => {
 
   const payload = {
     _id: user._id,
-    phone: user.phone,
-    phone_ext: user.phone_ext,
+    email: user.email,
   }
   delete user.password
   const accessToken = signJWT(payload, process.env.ACCESS_TOKEN_SECRET, '1y')

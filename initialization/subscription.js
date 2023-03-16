@@ -1,5 +1,5 @@
 import Subscription from '../model/Subscription.model.js'
-import SubscriptionData from '../data/subscription.js'
+import SubscriptionData from '../data/subscriptions.js'
 
 export const addSubscriptions = async () => {
   try {

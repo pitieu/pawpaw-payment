@@ -1,4 +1,5 @@
 import { EthNetwork } from './eth.ctrl.js'
+import { IOTANetwork } from './iota.ctrl.js'
 
 const networks = {
   ETH: {
@@ -21,6 +22,15 @@ const networks = {
       'https://sepolia.infura.io/v3/2c51ffbd0c7d41e1bed5916e12a81208',
     gasPriceUrl: '',
   },
+  NANO: {
+    network: 'NANO',
+    nodeUrl: 'https://mynano.ninja/api/node',
+  },
+  IOTA: {
+    network: 'IOTA',
+    nodeUrl: 'https://nodes.devnet.iota.org:443',
+    explorer: 'https://explorer.iota.org/devnet/',
+  },
 }
 
 export class cryptoManager {
@@ -32,6 +42,17 @@ export class cryptoManager {
         gasPriceUrl: networks[network.name].gasPriceUrl,
       })
     }
+    if (networks[network.name].network === 'NANO') {
+      this.network = new EthNetwork({
+        nodeUrl: networks[network.name].nodeUrl,
+      })
+    }
+    if (networks[network.name].network === 'IOTA') {
+      this.network = new IOTANetwork({
+        nodeUrl: networks[network.name].nodeUrl,
+      })
+    }
+    console.log('network', network.name, networks[network.name])
     if (!this.network) throw new Error('Invalid network')
   }
 
@@ -52,6 +73,10 @@ export class cryptoManager {
     return await this.network.createAccount()
   }
 
+  async listAccounts() {
+    return await this.network.listAccounts()
+  }
+
   async getTransaction(txHash) {
     return await this.network.getTransaction(txHash)
   }
@@ -62,5 +87,20 @@ export class cryptoManager {
 
   async getAccountHistory(address) {
     return await this.network.getAccountHistory(address)
+  }
+
+  async createToken(name, symbol, decimals, totalSupply) {
+    return await this.network.createToken(
+      name,
+      symbol,
+      totalSupply,
+      decimals,
+      privateKey,
+    )
+  }
+
+  async generateSeed() {
+    console.log(this.network)
+    return await this.network.generateSeed()
   }
 }

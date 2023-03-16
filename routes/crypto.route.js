@@ -5,13 +5,14 @@ import { Account } from '../model/Account.model.js'
 import { cryptoManager } from '../controller/networks/index.ctrl.js'
 import debug from '../utils/logger.js'
 import { authArea } from '../middleware/auth.middleware.js'
+import IOTA_ROUTES from './crypto/iota.route.js'
 
 dotenv.config({ path: './.env' })
 
 const router = express.Router()
 
 const validateNetwork = (network) => {
-  const networks = ['ETH', 'ETH_GORLI', 'ETH_SEPOLIA']
+  const networks = ['ETH', 'ETH_GORLI', 'ETH_SEPOLIA', 'IOTA']
   if (
     networks.includes(network.toUpperCase()) ||
     networks.includes(network.toLowerCase())
@@ -19,6 +20,9 @@ const validateNetwork = (network) => {
     return network
   else throw new Error('Invalid network')
 }
+
+// add iota.route.js routes to crypto.route.js
+router.use('/iota', IOTA_ROUTES)
 
 // get balance
 router.get('/balance', async (req, res, next) => {
@@ -77,7 +81,7 @@ router.post('/transfer', authArea, async (req, res, next) => {
 })
 
 // create Account
-router.post('/account', authArea, async (req, res, next) => {
+router.post('/account', async (req, res, next) => {
   try {
     const network = validateNetwork(req.body.network)
     const crypto = new cryptoManager({ name: network })
