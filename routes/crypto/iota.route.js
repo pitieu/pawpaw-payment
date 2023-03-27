@@ -56,4 +56,16 @@ router.get('/seed', async (req, res, next) => {
   }
 })
 
+// get transaction
+router.get('/transaction', async (req, res, next) => {
+  try {
+    const crypto = new cryptoManager({ name: 'IOTA' })
+    const transaction = await crypto.getTransaction(req.query.txHash)
+
+    res.status(200).json(transaction)
+  } catch (err) {
+    next(err)
+  }
+})
+
 export default router

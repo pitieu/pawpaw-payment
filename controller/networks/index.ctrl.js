@@ -60,12 +60,12 @@ export class cryptoManager {
     return await this.network.balance(address)
   }
 
-  async transfer(sender, recipient, transferAmount, privateKey) {
+  async transfer(sender, recipient, transferAmount, options) {
     return await this.network.transfer(
       sender,
       recipient,
       transferAmount,
-      privateKey,
+      options,
     )
   }
 
@@ -100,7 +100,6 @@ export class cryptoManager {
   }
 
   async generateSeed() {
-    console.log(this.network)
     return await this.network.generateSeed()
   }
 }

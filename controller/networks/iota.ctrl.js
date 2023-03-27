@@ -4,10 +4,11 @@ import { Client, initLogger } from '@iota/client'
 import Converter from '@iota/converter'
 import crypto from 'crypto'
 
+initLogger()
+
 // create a class to manage an instance of eth network
 export class IOTANetwork {
   constructor({ nodeUrl }) {
-    initLogger()
     this.iota = new Client({ nodes: [nodeUrl], localPow: true })
   }
 
@@ -36,7 +37,12 @@ export class IOTANetwork {
       },
     )
 
-    return addresses[0]
+    return {
+      address: addresses[0],
+      seed: seed.seed,
+      mnemonic: seed.mnemonic,
+      hexEncodedSeed: seed.hexEncodedSeed,
+    }
   }
 
   async listAccounts() {}
@@ -56,17 +62,15 @@ export class IOTANetwork {
     return null
   }
 
-  async transfer(sender, recipient, transferAmount, privateKey) {
-    // Define the token information
-    const tokenName = 'USD'
-    const tokenSymbol = 'PUSD'
-
+  async transfer(sender, recipient, transferAmount, options) {
     // Generate a transfer object
     const transfers = [
       {
         address: recipient,
         value: transferAmount,
-        message: Converter.asciiToTrytes(`${tokenName}:${tokenSymbol}`),
+        message: Converter.asciiToTrytes(
+          `${options.tokenName}:${options.tokenSymbol}`,
+        ),
       },
     ]
 
@@ -75,12 +79,13 @@ export class IOTANetwork {
     const bundle = await this.iota.sendTrytes(trytes, 3, 14)
 
     console.log('Transfer completed:', bundle[0].hash)
+    return bundle[0]
   }
 
   async getTransaction(txHash) {
     // Get the transaction objects for the given transaction hash
     const transactions = await this.iota.findTransactionObjects({
-      hashes: [txHash],
+      address: [txHash],
     })
 
     if (transactions.length === 0) {
@@ -125,7 +130,7 @@ export class IOTANetwork {
   }
 
   // get the balance of an account
-  async balance(address) {
+  async balance(address, tokenAddress) {
     try {
       // Use the iota library to get the balance of the specified address
       const balance = await this.iota.getBalances([address], 100)
