@@ -8,3 +8,4 @@ db/
 yarn.lock
 package-lock.json
 *.log
+config/sslcert
